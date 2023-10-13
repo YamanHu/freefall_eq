@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Free Fall Calculator</title>
+  <style>
+    .question {
+      color: #009688;
+      font-weight: bold;
+      font-size: 25px;
+    }
+
+    /* Reset some default styles for consistency */
+    body, h1, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Apply styles to the body for overall appearance */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 20px;
+      padding: 20px;
+    }
+
+    /* Center the main content on the page */
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Style the calculator */
+    .calculator {
+      flex: 1;
+      background-color: #ffffff;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      margin-right: 20px;
+    }
+
+    /* Style the calculator form elements */
+    .calculator form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .calculator label {
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .calculator select,
+    .calculator input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      margin: 5px 0;
+      border: 1px solid #cccccc;
+      border-radius: 3px;
+    }
+
+    .calculator button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Style the result display */
+    .calculator #result {
+      margin: 10px 0;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    /* Style the image container */
+    .image {
+      flex: 1;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      margin-right: 20px;
+      padding: 10px;
+      background-color: #ffffff;
+    }
+
+    .image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Responsive layout for smaller screens */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .calculator,
+      .image {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Programmed and designed by yaman!</h1>
+  <hr>
+  <h1>Free Fall Calculator</h1>
+
+  <div class="container">
+    <div class="calculator">
+      <p id="question"><span class="question">Question1</span> A ball is kicked vertically upward with an initial speed of 26.4 meters per second. How long will it take the ball before it falls to the ground?</p>
+      <form id="freeFallForm">
+        <label for="equation">Choose a Free Fall Equation:</label>
+        <select id="equation" name="equation">
+          <option value="eq1">X = Xo + Vo*t + 1/2*g*t^2</option>
+          <option value="eq2">X = Xo + V*t</option>
+          <option value="eq3">V = Vo + g*t</option>
+          <option value="eq4">V = 1/2(V + Vo)</option>
+          <option value="eq5">X - Xo = 1/2(V - Vo)*t</option>
+          <option value="eq6">V^2 = Vo^2 + 2*g*(X - Xo)</option>
+        </select>
+
+        <label for="Vo">Initial Velocity (Vo):</label>
+        <input type="text" id="Vo" name="Vo" required placeholder="none or x">
+
+        <label for="V">Final Velocity (V):</label>
+        <input type="text" id="V" name="V" required placeholder="none or x">
+
+        <label for="g">Acceleration due to Gravity (g):</label>
+        <input type="text" id="g" name="g" required placeholder="none or x">
+
+        <label for="t">Time (t):</label>
+        <input type="text" id="t" name="t" required placeholder="none or x">
+
+        <label for="Xo">Initial Position (Xo):</label>
+        <input type="text" id="Xo" name="Xo" required placeholder="none or x">
+
+        <label for="X">Final Position (X):</label>
+        <input type="text" id="X" name="X" required placeholder="none or x">
+
+        <button type="button" id="calculateButton">Calculate</button>
+
+        <p id="result"></p>
+      </form>
+    </div>
+
+    <div class="image">
+      <img src="./qustion1.PNG" alt="Free Fall Image">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="calculator">
+      <p id="question2"><span class="question">Question2 a)</span> A stone is thrown from ground level with an initial speed of 10 meters per second. What is the speed of the stone after 0.5 seconds?</p>
+      <form id="freeFallForm2">
+        <label for="equation2">Choose a Free Fall Equation:</label>
+        <select id="equation2" name="equation2">
+          <option value="eq1">X = Xo + Vo*t + 1/2*g*t^2</option>
+          <option value="eq2">X = Xo + V*t</option>
+          <option value="eq3">V = Vo + g*t</option>
+          <option value="eq4">V = 1/2(V + Vo)</option>
+          <option value="eq5">X - Xo = 1/2(V - Vo)*t</option>
+          <option value="eq6">V^2 = Vo^2 + 2*g*(X - Xo)</option>
+        </select>
+
+        <label for="Vo2">Initial Velocity (Vo):</label>
+        <input type="text" id="Vo2" name="Vo2" required placeholder="none or x" value="10">
+
+        <label for="V2">Final Velocity (V):</label>
+        <input type="text" id="V2" name="V2" required placeholder="none or x">
+
+        <label for="g2">Acceleration due to Gravity (g):</label>
+        <input type="text" id="g2" name="g2" required placeholder="none or x" value="-9.8">
+
+        <label for="t2">Time (t):</label>
+        <input type="text" id="t2" name="t2" required value="0.5" placeholder="none or x">
+
+        <label for="Xo2">Initial Position (Xo):</label>
+        <input type="text" id="Xo2" name="Xo2" required placeholder="none or x" value="0">
+
+        <label for="X2">Final Position (X):</label>
+        <input type="text" id="X2" name="X2" required placeholder="none or x">
+
+        <button type="button" id="calculateButton2">Calculate</button>
+
+        <p id="result2"></p>
+      </form>
+    </div>
+    <div class="image">
+      <img src="./question2.PNG" alt="Free Fall Image">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="calculator">
+      <p id="question2b"><span class="question">Question2 b)</span> What is the distance of the stone after 0.5 seconds?</p>
+      <form id="freeFallForm2b">
+        <label for="equation2b">Choose a Free Fall Equation:</label>
+        <select id="equation2b" name="equation2b">
+          <option value="eq1">X = Xo + Vo*t + 1/2*g*t^2</option>
+          <option value="eq2">X = Xo + V*t</option>
+          <option value="eq3">V = Vo + g*t</option>
+          <option value="eq4">V = 1/2(V + Vo)</option>
+          <option value="eq5">X - Xo = 1/2(V - Vo)*t</option>
+          <option value="eq6">V^2 = Vo^2 + 2*g*(X - Xo)</option>
+        </select>
+
+        <label for="Vo2b">Initial Velocity (Vo):</label>
+        <input type="text" id="Vo2b" name="Vo2b" required placeholder="none or x" value="10">
+
+        <label for="V2b">Final Velocity (V):</label>
+        <input type="text" id="V2b" name="V2b" required placeholder="none or x">
+
+        <label for="g2b">Acceleration due to Gravity (g):</label>
+        <input type="text" id="g2b" name="g2b" required placeholder="none or x" value="-9.8">
+
+        <label for="t2b">Time (t):</label>
+        <input type="text" id="t2b" name="t2b" required value="0.5" placeholder="none or x">
+
+        <label for="Xo2b">Initial Position (Xo):</label>
+        <input type="text" id="Xo2b" name="Xo2b" required placeholder="none or x" value="0">
+
+        <label for="X2b">Final Position (X):</label>
+        <input type="text" id="X2b" name="X2b" required placeholder="none or x">
+
+        <button type="button" id="calculateButton2b">Calculate</button>
+
+        <p id="result2b"></p>
+      </form>
+    </div>
+    <div class="image">
+      <img src="./question2.PNG" alt="Free Fall Image">
+    </div>
+  </div>
+  <div class="container">
+    <div class="calculator">
+      <p id="question3"><span class="question">Question3</span> A stone falls downward with an initial speed of 10 meters per second, and the stone's acceleration is constant. What is the speed of the stone after 0.5 seconds?</p>
+      <form id="freeFallForm3">
+        <label for="equation3">Choose a Free Fall Equation:</label>
+        <select id="equation3" name="equation3">
+          <option value="eq1">X = Xo + Vo*t + 1/2*g*t^2</option>
+          <option value="eq2">X = Xo + V*t</option>
+          <option value="eq3">V = Vo + g*t</option>
+          <option value="eq4">V = 1/2(V + Vo)</option>
+          <option value="eq5">X - Xo = 1/2(V - Vo)*t</option>
+          <option value="eq6">V^2 = Vo^2 + 2*g*(X - Xo)</option>
+        </select>
+
+        <label for="Vo3">Initial Velocity (Vo):</label>
+        <input type="text" id="Vo3" name="Vo3" required placeholder="none or x" value="10">
+
+        <label for="V3">Final Velocity (V):</label>
+        <input type="text" id="V3" name="V3" required placeholder="none or x">
+
+        <label for="g3">Acceleration due to Gravity (g):</label>
+        <input type="text" id="g3" name="g3" required placeholder="none or x" value="9.8">
+
+        <label for="t3">Time (t):</label>
+        <input type="text" id="t3" name="t3" required value="0.5" placeholder="none or x">
+
+        <label for="Xo3">Initial Position (Xo):</label>
+        <input type="text" id="Xo3" name="Xo3" required placeholder="none or x" value="0">
+
+        <label for="X3">Final Position (X):</label>
+        <input type="text" id="X3" name="X3" required placeholder="none or x">
+
+        <button type="button" id="calculateButton3">Calculate</button>
+
+        <p id="result3"></p>
+      </form>
+    </div>
+    <div class="image">
+      <img src="./question3.PNG" alt="Free Fall Image">
+    </div>
+  </div>
+  <div class="container">
+    <div class="calculator">
+      <p id="question4"><span class="question">Question4</span> A ball is dropped straight down at an initial speed of 10 meters per second, from a height of 50 metres. How long does it take for the ball to hit the ground?</p>
+      <form id="freeFallForm4">
+        <label for="equation4">Choose a Free Fall Equation:</label>
+        <select id="equation4" name="equation4">
+          <option value="eq1">X = Xo + Vo*t + 1/2*g*t^2</option>
+          <option value="eq2">X = Xo + V*t</option>
+          <option value="eq3">V = Vo + g*t</option>
+          <option value="eq4">V = 1/2(V + Vo)</option>
+          <option value="eq5">X - Xo = 1/2(V - Vo)*t</option>
+          <option value="eq6">V^2 = Vo^2 + 2*g*(X - Xo)</option>
+        </select>
+  
+        <label for="Vo4">Initial Velocity (Vo):</label>
+        <input type="text" id="Vo4" name="Vo4" required value="10">
+  
+        <label for="V4">Final Velocity (V):</label>
+        <input type="text" id="V4" name="V4" required placeholder="none or x">
+  
+        <label for="g4">Acceleration due to Gravity (g):</label>
+        <input type="text" id="g4" name="g4" required value="-9.8">
+  
+        <label for="t4">Time (t):</label>
+        <input type="text" id="t4" name="t4" required placeholder="none or x">
+  
+        <label for="Xo4">Initial Position (Xo):</label>
+        <input type="text" id="Xo4" name="Xo4" required value="50">
+  
+        <label for "X4">Final Position (X):</label>
+        <input type="text" id="X4" name="X4" required placeholder="none or x">
+  
+        <button type="button" id="calculateButton4">Calculate</button>
+  
+        <p id="result4"></p>
+      </form>
+    </div>
+    <div class="image">
+      <img src="./question4.PNG" alt="Free Fall Image">
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="calculator">
+      <p id="question5"><span class="question">Question5</span>On August 2, 1971, astronaut yaman, while standing on the surface of the Moon, dropped a hammer with a mass of 1.3 kilograms and a hawk feather of 0.03, as well as a height of 1.6 meters. The two objects were launched on the surface of the moon 1.4 seconds after they fell. How surprising is the force of gravity on the moon's surface?</p>
+      <form id="freeFallForm5">
+        <label for="equation5">Choose a Free Fall Equation:</label>
+        <select id="equation5" name="equation5">
+          <option value="eq1">X = Xo + Vo*t + 1/2*g*t^2</option>
+          <option value="eq2">X = Xo + V*t</option>
+          <option value="eq3">V = Vo + g*t</option>
+          <option value="eq4">V = 1/2(V + Vo)</option>
+          <option value="eq5">X - Xo = 1/2(V - Vo)*t</option>
+          <option value="eq6">V^2 = Vo^2 + 2*g*(X - Xo)</option>
+        </select>
+  
+        <label for="Vo5">Initial Velocity (Vo):</label>
+        <input type="text" id="Vo5" name="Vo5" required value="20">
+  
+        <label for="V5">Final Velocity (V):</label>
+        <input type="text" id="V5" name="V5" required placeholder="none or x">
+  
+        <label for="g5">Acceleration due to Gravity (g):</label>
+        <input type="text" id="g5" name="g5" required value="-9.8">
+  
+        <label for="t5">Time (t):</label>
+        <input type="text" id="t5" name="t5" required placeholder="none or x">
+  
+        <label for="Xo5">Initial Position (Xo):</label>
+        <input type="text" id="Xo5" name="Xo5" required placeholder="none or x" value="0">
+  
+<label for "X5">Final Position (X):</label>
+<input type="text" id="X5" name="X5" required placeholder="none or x">
+
+  
+        <button type="button" id="calculateButton5">Calculate</button>
+  
+        <p id="result5"></p>
+      </form>
+    </div> 
+    <div class="image">
+      <img src="./question5.PNG" alt="Free Fall Image">
+    </div>
+  </div>
+  <div class="container">
+    <div class="calculator">
+      <p id="question6a"><span class="question">Question6 a)</span> The edge of the cliff rises 100 meters above the ground. A rock is thrown straight off the edge of a cliff at a speed of 8 meters per second. How long does it take for the rock to fall to the ground?</p>
+      <form id="freeFallForm6a">
+        <label for="equation6a">Choose a Free Fall Equation:</label>
+        <select id="equation6a" name="equation6a">
+          <option value="eq1">X = Xo + Vo*t + 1/2*g*t^2</option>
+          <option value="eq2">X = Xo + V*t</option>
+          <option value="eq3">V = Vo + g*t</option>
+          <option value="eq4">V = 1/2(V + Vo)</option>
+          <option value="eq5">X - Xo = 1/2(V - Vo)*t</option>
+          <option value="eq6">V^2 = Vo^2 + 2*g*(X - Xo)</option>
+        </select>
+  
+        <label for="Vo6a">Initial Velocity (Vo):</label>
+        <input type="text" id="Vo6a" name="Vo6a" required value="8">
+  
+        <label for="V6a">Final Velocity (V):</label>
+        <input type="text" id="V6a" name="V6a" required placeholder="none or x">
+  
+        <label for="g6a">Acceleration due to Gravity (g):</label>
+        <input type="text" id="g6a" name="g6a" required value="-9.8">
+  
+        <label for="t6a">Time (t):</label>
+        <input type="text" id="t6a" name="t6a" required placeholder="none or x">
+  
+        <label for="Xo6a">Initial Position (Xo):</label>
+        <input type="text" id="Xo6a" name="Xo6a" required value="100">
+  
+        <label for "X6a">Final Position (X):</label>
+        <input type="text" id="X6a" name="X6a" required placeholder="none or x">
+  
+        <button type="button" id="calculateButton6a">Calculate</button>
+  
+        <p id="result6a"></p>
+      </form>
+    </div>
+    <div class="image">
+      <img src="./question6.PNG" alt="Free Fall Image">
+    </div>
+  </div>
+  <div class="container">
+    <div class="calculator">
+      <p id="question6b"><span class="question">Question6 b)</span> The edge of the cliff rises 100 meters above the ground. A rock is thrown straight off the edge of a cliff at a speed of 8 meters per second. How long does it take for the rock to fall to the ground?</p>
+      <form id="freeFallForm6b">
+        <label for="equation6b">Choose a Free Fall Equation:</label>
+        <select id="equation6b" name="equation6b">
+          <option value="eq1">X = Xo + Vo*t + 1/2*g*t^2</option>
+          <option value="eq2">X = Xo + V*t</option>
+          <option value="eq3">V = Vo + g*t</option>
+          <option value="eq4">V = 1/2(V + Vo)</option>
+          <option value="eq5">X - Xo = 1/2(V - Vo)*t</option>
+          <option value="eq6">V^2 = Vo^2 + 2*g*(X - Xo)</option>
+        </select>
+  
+        <label for="Vo6b">Initial Velocity (Vo):</label>
+        <input type="text" id="Vo6b" name="Vo6b" required value="8">
+  
+        <label for="V6b">Final Velocity (V):</label>
+        <input type="text" id="V6b" name="V6b" required placeholder="none or x">
+  
+        <label for="g6b">Acceleration due to Gravity (g):</label>
+        <input type="text" id="g6b" name="g6b" required value="-9.8">
+  
+        <label for="t6b">Time (t):</label>
+        <input type="text" id="t6b" name="t6b" required placeholder="none or x">
+  
+        <label for="Xo6b">Initial Position (Xo):</label>
+        <input type="text" id="Xo6b" name="Xo6b" required value="100">
+  
+        <label for "X6b">Final Position (X):</label>
+        <input type="text" id="X6b" name="X6b" required placeholder="none or x">
+  
+        <button type="button" id="calculateButton6b">Calculate</button>
+  
+        <p id="result6b"></p>
+      </form>
+    </div>
+    <div class="image">
+      <img src="./question6b.PNG" alt="Free Fall Image">
+    </div>
+  </div>
+  <div class="image">
+    <img src="./eventually.PNG" alt="Free Fall Image">
+  </div>
+  
+
+  <script>
+    document.getElementById("calculateButton").addEventListener("click", function () {
+const equation = document.getElementById("equation").value;
+const VoInput = document.getElementById("Vo").value.trim().toLowerCase();
+const VInput = document.getElementById("V").value.trim().toLowerCase();
+const gInput = document.getElementById("g").value.trim().toLowerCase();
+const tInput = document.getElementById("t").value.trim().toLowerCase();
+const XoInput = document.getElementById("Xo").value.trim().toLowerCase();
+const XInput = document.getElementById("X").value.trim().toLowerCase();
+
+let Vo = VoInput === "none" ? null : VoInput === "x" ? null : parseFloat(VoInput);
+let V = VInput === "none" ? null : VInput === "x" ? null : parseFloat(VInput);
+let g = gInput === "none" ? null : gInput === "x" ? null : parseFloat(gInput);
+let t = tInput === "none" ? null : tInput === "x" ? null : parseFloat(tInput);
+let Xo = XoInput === "none" ? null : XoInput === "x" ? null : parseFloat(XoInput);
+let X = XInput === "none" ? null : XInput === "x" ? null : parseFloat(XInput);
+
+let result = "Please provide values for all parameters.";
+
+if (equation === "eq1") {
+  if (t === null) {
+    if (Vo !== null && Xo !== null && X !== null) {
+      const a = 0.5 * g;
+      const b = Vo;
+      const c = Xo - X;
+      const discriminant = b * b - 4 * a * c;
+      if (discriminant >= 0) {
+        const t1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+        const t2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+        result = `t = ${t1} s or t = ${t2} s`;
+      } else {
+        result = "No real solutions for time (t).";
+      }
+    } else {
+      result = "Please provide valid values for other parameters to calculate time (t).";
+    }
+  } else {
+    result = Xo + Vo * t + 0.5 * g * t * t;
+  }
+} else if (equation === "eq2") {
+  if (t === null) {
+    if (V !== null && Xo !== null && X !== null) {
+      if (V !== null) {
+        result = (X - Xo) / V;
+      } else {
+        result = "Unable to solve for time (t) with provided values.";
+      }
+    } else {
+      result = "Please provide valid values for other parameters to calculate time (t).";
+    }
+  } else {
+    result = Xo + V * t;
+  }
+} else if (equation === "eq3") {
+  if (t === null) {
+    if (Vo !== null && g !== null) {
+      result = (V - Vo) / g;
+    } else {
+      result = "Please provide valid values for other parameters to calculate time (t).";
+    }
+  }
+} else if (equation === "eq4") {
+  if (V === null) {
+    if (Vo !== null) {
+      result = 2 * Vo;
+    } else {
+      result = "Please provide valid value for initial velocity (Vo) to calculate final velocity (V).";
+    }
+  }
+} else if (equation === "eq5") {
+  if (t === null) {
+    if (V !== null && Vo !== null && Xo !== null && X !== null) {
+      result = (X - Xo) / (0.5 * (V - Vo));
+    } else {
+      result = "Please provide valid values for other parameters to calculate time (t).";
+    }
+  }
+} else if (equation === "eq6") {
+  if (V === null) {
+    if (Vo !== null && g !== null && Xo !== null && X !== null) {
+      result = Math.sqrt(Vo * Vo + 2 * g * (X - Xo));
+    } else {
+      result = "Please provide valid values for other parameters to calculate final velocity (V).";
+    }
+  }
+}
+
+document.getElementById("result").textContent = `Result: ${result}`;      // ...
+    });
+
+    document.getElementById("calculateButton2").addEventListener("click", function () {
+const equation2 = document.getElementById("equation2").value;
+const Vo2Input = document.getElementById("Vo2").value.trim().toLowerCase();
+const V2Input = document.getElementById("V2").value.trim().toLowerCase();
+const g2Input = document.getElementById("g2").value.trim().toLowerCase();
+const t2Input = document.getElementById("t2").value.trim().toLowerCase();
+const Xo2Input = document.getElementById("Xo2").value.trim().toLowerCase();
+const X2Input = document.getElementById("X2").value.trim().toLowerCase();
+
+let Vo2 = Vo2Input === "none" ? null : Vo2Input === "x" ? null : parseFloat(Vo2Input);
+let V2 = V2Input === "none" ? null : V2Input === "x" ? null : parseFloat(V2Input);
+let g2 = g2Input === "none" ? null : g2Input === "x" ? null : parseFloat(g2Input);
+let t2 = t2Input === "none" ? null : t2Input === "x" ? null : parseFloat(t2Input);
+let Xo2 = Xo2Input === "none" ? null : Xo2Input === "x" ? null : parseFloat(Xo2Input);
+let X2 = X2Input === "none" ? null : X2Input === "x" ? null : parseFloat(X2Input);
+
+let result2 = "Please provide values for all parameters.";
+
+if (equation2 === "eq1") {
+  if (t2 !== null && Vo2 !== null && g2 !== null && Xo2 !== null) {
+    result2 = Xo2 + Vo2 * t2 + 0.5 * g2 * t2 * t2;
+  } else {
+    result2 = "Please provide valid values for the parameters to calculate the position (X).";
+  }
+} else if (equation2 === "eq2") {
+  if (t2 !== null && Xo2 !== null) {
+    if (V2 !== null) {
+      result2 = Xo2 + V2 * t2;
+    } else {
+      result2 = "Unable to solve for final velocity (V) with provided values.";
+    }
+  } else {
+    result2 = "Please provide valid values for the parameters to calculate the position (X).";
+  }
+} else if (equation2 === "eq3") {
+  if (Vo2 !== null && t2 !== null && g2 !== null) {
+    result2 = Vo2 + g2 * t2;
+  } else {
+    result2 = "Please provide valid values for the parameters to calculate the final velocity (V).";
+  }
+} else if (equation2 === "eq4") {
+  if (V2 === null) {
+    if (Vo2 !== null) {
+      result2 = 0.5 * (V2 + Vo2);
+    } else {
+      result2 = "Please provide a valid value for initial velocity (Vo) to calculate final velocity (V).";
+    }
+  }
+} else if (equation2 === "eq5") {
+  if (X2 !== null && Xo2 !== null && V2 !== null && Vo2 !== null) {
+    result2 = (X2 - Xo2) / (0.5 * (V2 - Vo2));
+  } else {
+    result2 = "Please provide valid values for the parameters to calculate the time (t).";
+  }
+} else if (equation2 === "eq6") {
+  if (Vo2 !== null && g2 !== null && Xo2 !== null && X2 !== null) {
+    result2 = Math.sqrt(Vo2 * Vo2 + 2 * g2 * (X2 - Xo2));
+  } else {
+    result2 = "Please provide valid values for the parameters to calculate the final velocity (V).";
+  }
+}
+
+document.getElementById("result2").textContent = `Result: ${result2}`;      // ...
+    });
+
+    document.getElementById("calculateButton2b").addEventListener("click", function () {
+      const equation2b = document.getElementById("equation2b").value;
+      const Vo2bInput = document.getElementById("Vo2b").value.trim().toLowerCase();
+      const V2bInput = document.getElementById("V2b").value.trim().toLowerCase();
+      const g2bInput = document.getElementById("g2b").value.trim().toLowerCase();
+      const t2bInput = document.getElementById("t2b").value.trim().toLowerCase();
+      const Xo2bInput = document.getElementById("Xo2b").value.trim().toLowerCase();
+      const X2bInput = document.getElementById("X2b").value.trim().toLowerCase();
+
+      let Vo2b = Vo2bInput === "none" ? null : Vo2bInput === "x" ? null : parseFloat(Vo2bInput);
+      let V2b = V2bInput === "none" ? null : V2bInput === "x" ? null : parseFloat(V2bInput);
+      let g2b = g2bInput === "none" ? null : g2bInput === "x" ? null : parseFloat(g2bInput);
+      let t2b = t2bInput === "none" ? null : t2bInput === "x" ? null : parseFloat(t2bInput);
+      let Xo2b = Xo2bInput === "none" ? null : Xo2bInput === "x" ? null : parseFloat(Xo2bInput);
+      let X2b = X2bInput === "none" ? null : X2bInput === "x" ? null : parseFloat(X2bInput);
+
+      let result2b = "Please provide values for all parameters.";
+
+      if (equation2b === "eq1") {
+        if (t2b !== null && Vo2b !== null && g2b !== null && Xo2b !== null) {
+          result2b = Xo2b + Vo2b * t2b + 0.5 * g2b * t2b * t2b;
+        } else {
+          result2b = "Please provide valid values for the parameters to calculate the position (X).";
+        }
+      } else if (equation2b === "eq2") {
+        // Your code for equation2b, if applicable
+      } else if (equation2b === "eq3") {
+        // Your code for equation2b, if applicable
+      } else if (equation2b === "eq4") {
+        // Your code for equation2b, if applicable
+      } else if (equation2b === "eq5") {
+        // Your code for equation2b, if applicable
+      } else if (equation2b === "eq6") {
+        // Your code for equation2b, if applicable
+      }
+
+      document.getElementById("result2b").textContent = `Result: ${result2b}`;
+    });
+    document.getElementById("calculateButton3").addEventListener("click", function() {
+  const equation3 = document.getElementById("equation3").value;
+  const Vo3Input = document.getElementById("Vo3").value.trim().toLowerCase();
+  const V3Input = document.getElementById("V3").value.trim().toLowerCase();
+  const g3Input = document.getElementById("g3").value.trim().toLowerCase();
+  const t3Input = document.getElementById("t3").value.trim().toLowerCase();
+  const Xo3Input = document.getElementById("Xo3").value.trim().toLowerCase();
+  const X3Input = document.getElementById("X3").value.trim().toLowerCase();
+
+  let Vo3 = Vo3Input === "none" ? null : Vo3Input === "x" ? null : parseFloat(Vo3Input);
+  let V3 = V3Input === "none" ? null : V3Input === "x" ? null : parseFloat(V3Input);
+  let g3 = g3Input === "none" ? null : g3Input === "x" ? null : parseFloat(g3Input);
+  let t3 = t3Input === "none" ? null : t3Input === "x" ? null : parseFloat(t3Input);
+  let Xo3 = Xo3Input === "none" ? null : Xo3Input === "x" ? null : parseFloat(Xo3Input);
+  let X3 = X3Input === "none" ? null : X3Input === "x" ? null : parseFloat(X3Input);
+
+  let result3 = "Please provide values for all parameters.";
+
+  if (equation3 === "eq1") {
+    if (t3 !== null && Vo3 !== null && g3 !== null && Xo3 !== null) {
+      result3 = Xo3 + Vo3 * t3 + 0.5 * g3 * t3 * t3;
+    } else {
+      result3 = "Please provide valid values for the parameters to calculate the position (X).";
+    }
+  } else if (equation3 === "eq2") {
+    if (t3 !== null && Xo3 !== null) {
+      if (V3 !== null) {
+        result3 = Xo3 + V3 * t3;
+      } else {
+        result3 = "Unable to solve for final velocity (V) with provided values.";
+      }
+    } else {
+      result3 = "Please provide valid values for the parameters to calculate the position (X).";
+    }
+  } else if (equation3 === "eq3") {
+    if (Vo3 !== null && t3 !== null && g3 !== null) {
+      result3 = Vo3 + g3 * t3;
+    } else {
+      result3 = "Please provide valid values for the parameters to calculate the final velocity (V).";
+    }
+  } else if (equation3 === "eq4") {
+    if (V3 === null) {
+      if (Vo3 !== null) {
+        result3 = 0.5 * (V3 + Vo3);
+      } else {
+        result3 = "Please provide a valid value for initial velocity (Vo) to calculate final velocity (V).";
+      }
+    }
+  } else if (equation3 === "eq5") {
+    if (X3 !== null && Xo3 !== null && V3 !== null && Vo3 !== null) {
+      result3 = (X3 - Xo3) / (0.5 * (V3 - Vo3));
+    } else {
+      result3 = "Please provide valid values for the parameters to calculate the time (t).";
+    }
+  } else if (equation3 === "eq6") {
+    if (Vo3 !== null && g3 !== null && Xo3 !== null && X3 !== null) {
+      result3 = Math.sqrt(Vo3 * Vo3 + 2 * g3 * (X3 - Xo3));
+    } else {
+      result3 = "Please provide valid values for the parameters to calculate the final velocity (V).";
+    }
+  }
+
+  document.getElementById("result3").textContent = `Result: ${result3}`;
+});
+document.getElementById("calculateButton4").addEventListener("click", function() {
+  const equation4 = document.getElementById("equation4").value;
+  const Vo4Input = document.getElementById("Vo4").value.trim().toLowerCase();
+  const V4Input = document.getElementById("V4").value.trim().toLowerCase();
+  const g4Input = document.getElementById("g4").value.trim().toLowerCase();
+  const t4Input = document.getElementById("t4").value.trim().toLowerCase();
+  const Xo4Input = document.getElementById("Xo4").value.trim().toLowerCase();
+  const X4Input = document.getElementById("X4").value.trim().toLowerCase();
+
+  let Vo4 = Vo4Input === "none" ? null : Vo4Input === "x" ? null : parseFloat(Vo4Input);
+  let V4 = V4Input === "none" ? null : V4Input === "x" ? null : parseFloat(V4Input);
+  let g4 = g4Input === "none" ? null : g4Input === "x" ? null : parseFloat(g4Input);
+  let t4 = t4Input === "none" ? null : t4Input === "x" ? null : parseFloat(t4Input);
+  let Xo4 = Xo4Input === "none" ? null : Xo4Input === "x" ? null : parseFloat(Xo4Input);
+  let X4 = X4Input === "none" ? null : X4Input === "x" ? null : parseFloat(X4Input);
+
+  let result4 = "Please provide values for all parameters.";
+
+  if (equation4 === "eq1") {
+    if (t4 === null) {
+      if (Vo4 !== null && Xo4 !== null) {
+        const a4 = 0.5 * g4;
+        const b4 = Vo4;
+        const c4 = Xo4 - X4;
+        const discriminant4 = b4 * b4 - 4 * a4 * c4;
+        if (discriminant4 >= 0) {
+          const t41 = (-b4 + Math.sqrt(discriminant4)) / (2 * a4);
+          const t42 = (-b4 - Math.sqrt(discriminant4)) / (2 * a4);
+          result4 = `t = ${t41} s or t = ${t42} s`;
+        } else {
+          result4 = "No real solutions for time (t).";
+        }
+      } else {
+        result4 = "Please provide valid values for other parameters to calculate time (t).";
+      }
+    } else {
+      result4 = Xo4 + Vo4 * t4 + 0.5 * g4 * t4 * t4;
+    }
+  } else if (equation4 === "eq2") {
+    if (t4 === null) {
+      if (V4 !== null && Xo4 !== null) {
+        if (V4 !== null) {
+          result4 = (X4 - Xo4) / V4;
+        } else {
+          result4 = "Unable to solve for time (t) with provided values.";
+        }
+      } else {
+        result4 = "Please provide valid values for other parameters to calculate time (t).";
+      }
+    } else {
+      result4 = Xo4 + V4 * t4;
+    }
+  } else if (equation4 === "eq3") {
+    if (t4 === null) {
+      if (Vo4 !== null && g4 !== null) {
+        result4 = (V4 - Vo4) / g4;
+      } else {
+        result4 = "Please provide valid values for other parameters to calculate time (t).";
+      }
+    }
+  } else if (equation4 === "eq4") {
+    if (V4 === null) {
+      if (Vo4 !== null) {
+        result4 = 2 * Vo4;
+      } else {
+        result4 = "Please provide valid value for initial velocity (Vo) to calculate final velocity (V).";
+      }
+    }
+  } else if (equation4 === "eq5") {
+    if (t4 === null) {
+      if (V4 !== null && Vo4 !== null && Xo4 !== null && X4 !== null) {
+        result4 = (X4 - Xo4) / (0.5 * (V4 - Vo4));
+      } else {
+        result4 = "Please provide valid values for other parameters to calculate time (t).";
+      }
+    }
+  } else if (equation4 === "eq6") {
+    if (t4 === null) {
+      if (Vo4 !== null && g4 !== null && Xo4 !== null && X4 !== null) {
+        result4 = Math.sqrt(Vo4 * Vo4 + 2 * g4 * (X4 - Xo4));
+      } else {
+        result4 = "Please provide valid values for other parameters to calculate time (t).";
+      }
+    }
+  }
+
+  document.getElementById("result4").textContent = `Result: ${result4}`;
+});
+document.getElementById("calculateButton5").addEventListener("click", function() {
+  const equation5 = document.getElementById("equation5").value;
+  const Vo5Input = document.getElementById("Vo5").value.trim().toLowerCase();
+  const V5Input = document.getElementById("V5").value.trim().toLowerCase();
+  const g5Input = document.getElementById("g5").value.trim().toLowerCase();
+  const t5Input = document.getElementById("t5").value.trim().toLowerCase();
+  const Xo5Input = document.getElementById("Xo5").value.trim().toLowerCase();
+  const X5Input = document.getElementById("X5").value.trim().toLowerCase();
+
+  let Vo5 = Vo5Input === "none" ? null : Vo5Input === "x" ? null : parseFloat(Vo5Input);
+  let V5 = V5Input === "none" ? null : V5Input === "x" ? null : parseFloat(V5Input);
+  let g5 = g5Input === "none" ? null : g5Input === "x" ? null : parseFloat(g5Input);
+  let t5 = t5Input === "none" ? null : t5Input === "x" ? null : parseFloat(t5Input);
+  let Xo5 = Xo5Input === "none" ? null : Xo5Input === "x" ? null : parseFloat(Xo5Input);
+  let X5 = X5Input === "none" ? null : X5Input === "x" ? null : parseFloat(X5Input);
+
+  let result5 = "Please provide values for all parameters.";
+
+  if (equation5 === "eq1") {
+    if (t5 === null) {
+      if (Vo5 !== null && Xo5 !== null) {
+        const a5 = 0.5 * g5;
+        const b5 = Vo5;
+        const c5 = Xo5 - X5;
+        const discriminant5 = b5 * b5 - 4 * a5 * c5;
+        if (discriminant5 >= 0) {
+          const t51 = (-b5 + Math.sqrt(discriminant5)) / (2 * a5);
+          const t52 = (-b5 - Math.sqrt(discriminant5)) / (2 * a5);
+          result5 = `t = ${t51} s or t = ${t52} s`;
+        } else {
+          result5 = "No real solutions for time (t).";
+        }
+      } else {
+        result5 = "Please provide valid values for other parameters to calculate time (t).";
+      }
+    } else {
+      result5 = Xo5 + Vo5 * t5 + 0.5 * g5 * t5 * t5;
+    }
+  } else if (equation5 === "eq2") {
+    if (t5 === null) {
+      if (V5 !== null && Xo5 !== null) {
+        if (V5 !== null) {
+          result5 = (X5 - Xo5) / V5;
+        } else {
+          result5 = "Unable to solve for time (t) with provided values.";
+        }
+      } else {
+        result5 = "Please provide valid values for other parameters to calculate time (t).";
+      }
+    } else {
+      result5 = Xo5 + V5 * t5;
+    }
+  } else if (equation5 === "eq3") {
+    if (t5 === null) {
+      if (Vo5 !== null && g5 !== null) {
+        result5 = (V5 - Vo5) / g5;
+      } else {
+        result5 = "Please provide valid values for other parameters to calculate time (t).";
+      }
+    }
+  } else if (equation5 === "eq4") {
+    if (V5 === null) {
+      if (Vo5 !== null) {
+        result5 = 2 * Vo5;
+      } else {
+        result5 = "Please provide valid value for initial velocity (Vo) to calculate final velocity (V).";
+      }
+    }
+  } else if (equation5 === "eq5") {
+    if (t5 === null) {
+      if (V5 !== null && Vo5 !== null && Xo5 !== null && X5 !== null) {
+        result5 = (X5 - Xo5) / (0.5 * (V5 - Vo5));
+      } else {
+        result5 = "Please provide valid values for other parameters to calculate time (t).";
+      }
+    }
+  } else if (equation5 === "eq6") {
+    if (V5 === null) {
+      if (Vo5 !== null && g5 !== null && Xo5 !== null && X5 !== null) {
+        result5 = Math.sqrt(Vo5 * Vo5 + 2 * g5 * (X5 - Xo5));
+      } else {
+        result5 = "Please provide valid values for other parameters to calculate final velocity (V).";
+      }
+    }
+  }
+
+  document.getElementById("result5").textContent = `Result: ${result5}`;
+});
+document.getElementById("calculateButton6a").addEventListener("click", function() {
+  const equation6a = document.getElementById("equation6a").value;
+  const Vo6aInput = document.getElementById("Vo6a").value.trim().toLowerCase();
+  const V6aInput = document.getElementById("V6a").value.trim().toLowerCase();
+  const g6aInput = document.getElementById("g6a").value.trim().toLowerCase();
+  const t6aInput = document.getElementById("t6a").value.trim().toLowerCase();
+  const Xo6aInput = document.getElementById("Xo6a").value.trim().toLowerCase();
+  const X6aInput = document.getElementById("X6a").value.trim().toLowerCase();
+
+  let Vo6a = Vo6aInput === "none" ? null : Vo6aInput === "x" ? null : parseFloat(Vo6aInput);
+  let V6a = V6aInput === "none" ? null : V6aInput === "x" ? null : parseFloat(V6aInput);
+  let g6a = g6aInput === "none" ? null : g6aInput === "x" ? null : parseFloat(g6aInput);
+  let t6a = t6aInput === "none" ? null : t6aInput === "x" ? null : parseFloat(t6aInput);
+  let Xo6a = Xo6aInput === "none" ? null : Xo6aInput === "x" ? null : parseFloat(Xo6aInput);
+  let X6a = X6aInput === "none" ? null : X6aInput === "x" ? null : parseFloat(X6aInput);
+
+  let result6a = "Please provide values for all parameters.";
+
+  if (equation6a === "eq1") {
+    if (t6a === null) {
+      if (Vo6a !== null && Xo6a !== null && X6a !== null) {
+        const a = 0.5 * g6a;
+        const b = Vo6a;
+        const c = Xo6a - X6a;
+        const discriminant = b * b - 4 * a * c;
+        if (discriminant >= 0) {
+          const t1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+          const t2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+          result6a = `t = ${t1} s or t = ${t2} s`;
+        } else {
+          result6a = "No real solutions for time (t).";
+        }
+      } else {
+        result6a = "Please provide valid values for other parameters to calculate time (t).";
+      }
+    } else {
+      result6a = Xo6a + Vo6a * t6a + 0.5 * g6a * t6a * t6a;
+    }
+  } else if (equation6a === "eq2") {
+    if (t6a === null) {
+      if (V6a !== null && Xo6a !== null && X6a !== null) {
+        if (V6a !== null) {
+          result6a = (X6a - Xo6a) / V6a;
+        } else {
+          result6a = "Unable to solve for time (t) with provided values.";
+        }
+      } else {
+        result6a = "Please provide valid values for other parameters to calculate time (t).";
+      }
+    } else {
+      result6a = Xo6a + V6a * t6a;
+    }
+  } else if (equation6a === "eq3") {
+    if (t6a === null) {
+      if (Vo6a !== null && g6a !== null) {
+        result6a = (V6a - Vo6a) / g6a;
+      } else {
+        result6a = "Please provide valid values for other parameters to calculate time (t).";
+      }
+    }
+  } else if (equation6a === "eq4") {
+    if (V6a === null) {
+      if (Vo6a !== null) {
+        result6a = 2 * Vo6a;
+      } else {
+        result6a = "Please provide valid value for initial velocity (Vo) to calculate final velocity (V).";
+      }
+    }
+  } else if (equation6a === "eq5") {
+    if (t6a === null) {
+      if (V6a !== null && Vo6a !== null && Xo6a !== null && X6a !== null) {
+        result6a = (X6a - Xo6a) / (0.5 * (V6a - Vo6a));
+      } else {
+        result6a = "Please provide valid values for other parameters to calculate time (t).";
+      }
+    }
+  } else if (equation6a === "eq6") {
+    if (V6a === null) {
+      if (Vo6a !== null && g6a !== null && Xo6a !== null && X6a !== null) {
+        result6a = Math.sqrt(Vo6a * Vo6a + 2 * g6a * (X6a - Xo6a));
+      } else {
+        result6a = "Please provide valid values for other parameters to calculate final velocity (V).";
+      }
+    }
+  }
+
+  document.getElementById("result6a").textContent = `Result: ${result6a}`;
+});
+document.getElementById("calculateButton6b").addEventListener("click", function() {
+    const equation6b = document.getElementById("equation6b").value;
+    const Vo6bInput = document.getElementById("Vo6b").value.trim().toLowerCase();
+    const V6bInput = document.getElementById("V6b").value.trim().toLowerCase();
+    const g6bInput = document.getElementById("g6b").value.trim().toLowerCase();
+    const t6bInput = document.getElementById("t6b").value.trim().toLowerCase();
+    const Xo6bInput = document.getElementById("Xo6b").value.trim().toLowerCase();
+    const X6bInput = document.getElementById("X6b").value.trim().toLowerCase();
+  
+    let Vo6b = Vo6bInput === "none" ? null : Vo6bInput === "x" ? null : parseFloat(Vo6bInput);
+    let V6b = V6bInput === "none" ? null : V6bInput === "x" ? null : parseFloat(V6bInput);
+    let g6b = g6bInput === "none" ? null : g6bInput === "x" ? null : parseFloat(g6bInput);
+    let t6b = t6bInput === "none" ? null : t6bInput === "x" ? null : parseFloat(t6bInput);
+    let Xo6b = Xo6bInput === "none" ? null : Xo6bInput === "x" ? null : parseFloat(Xo6bInput);
+    let X6b = X6bInput === "none" ? null : X6bInput === "x" ? null : parseFloat(X6bInput);
+  
+    let result6b = "Please provide values for all parameters.";
+  
+    if (equation6b === "eq1") {
+      if (t6b === null) {
+        if (Vo6b !== null && Xo6b !== null && X6b !== null) {
+          const a = 0.5 * g6b;
+          const b = Vo6b;
+          const c = Xo6b - X6b;
+          const discriminant = b * b - 4 * a * c;
+          if (discriminant >= 0) {
+            const t1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+            const t2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+            result6b = `t = ${t1} s or t = ${t2} s`;
+          } else {
+            result6b = "No real solutions for time (t).";
+          }
+        } else {
+          result6b = "Please provide valid values for other parameters to calculate time (t).";
+        }
+      } else {
+        result6b = Xo6b + Vo6b * t6b + 0.5 * g6b * t6b * t6b;
+      }
+    } else if (equation6b === "eq2") {
+      if (t6b === null) {
+        if (V6b !== null && Xo6b !== null && X6b !== null) {
+          if (V6b !== null) {
+            result6b = (X6b - Xo6b) / V6b;
+          } else {
+            result6b = "Unable to solve for time (t) with provided values.";
+          }
+        } else {
+          result6b = "Please provide valid values for other parameters to calculate time (t).";
+        }
+      } else {
+        result6b = Xo6b + V6b * t6b;
+      }
+    } else if (equation6b === "eq3") {
+      if (t6b === null) {
+        if (Vo6b !== null && g6b !== null) {
+          result6b = (V6b - Vo6b) / g6b;
+        } else {
+          result6b = "Please provide valid values for other parameters to calculate time (t).";
+        }
+      }
+    } else if (equation6b === "eq4") {
+      if (V6b === null) {
+        if (Vo6b !== null) {
+          result6b = 2 * Vo6b;
+        } else {
+          result6b = "Please provide valid value for initial velocity (Vo) to calculate final velocity (V).";
+        }
+      }
+    } else if (equation6b === "eq5") {
+      if (t6b === null) {
+        if (V6b !== null && Vo6b !== null && Xo6b !== null && X6b !== null) {
+          result6b = (X6b - Xo6b) / (0.5 * (V6b - Vo6b));
+        } else {
+          result6b = "Please provide valid values for other parameters to calculate time (t).";
+        }
+      }
+    } else if (equation6b === "eq6") {
+      if (V6b === null) {
+        if (Vo6b !== null && g6b !== null && Xo6b !== null && X6b !== null) {
+          result6b = Math.sqrt(Vo6b * Vo6b + 2 * g6b * (X6b - Xo6b));
+        } else {
+          result6b = "Please provide valid values for other parameters to calculate final velocity (V).";
+        }
+      }
+    }
+  
+    document.getElementById("result6b").textContent = `Result: ${result6b}`;
+  });
+  
+
+
+  </script>
+</body>
+</html>
